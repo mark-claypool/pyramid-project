@@ -21,7 +21,7 @@ Wall::Wall(int width, int height) {
 
   // Create bounding box.
   df::Vector corner(-1 * m_width/2.0f, -1 * m_height/2.0f);
-  df::Box box(corner, m_width, m_height);
+  df::Box box(corner, (float) m_width, (float) m_height);
   setBox(box);
 }
 

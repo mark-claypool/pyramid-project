@@ -78,13 +78,13 @@ void populateWorld() {
 
   // Place outer Walls.
   Wall *p_wall;
-  p_wall = new Wall(X, 1);
+  p_wall = new Wall((int) X, 1);
   p_wall -> setPosition(df::Vector(X/2.0f,1));
-  p_wall = new Wall(X, 1);
+  p_wall = new Wall((int) X, 1);
   p_wall -> setPosition(df::Vector(X/2.0f,Y-1));
-  p_wall = new Wall(1, Y-1);
+  p_wall = new Wall(1, (int) Y-1);
   p_wall -> setPosition(df::Vector(0,Y/2.0f));
-  p_wall = new Wall(1, Y-1);
+  p_wall = new Wall(1, (int) Y-1);
   p_wall -> setPosition(df::Vector(X-1,Y/2.0f));
 
   // Place random Walls.
