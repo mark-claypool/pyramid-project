@@ -58,38 +58,13 @@ int Mummy::eventHandler(const df::Event *e) {
 
 // Return true if Hero is within sensing distance.
 bool Mummy::senseHero() {
-
-  df::Vector diff = getPosition() - m_p_hero -> getPosition();
-  float dist = diff.getMagnitude();
-  if (dist < SENSE_RANGE)
-    return true;
-  else
-    return false;
+  return false; // Can't sense.
 }
 
 // If can see Hero and can sense Hero, return direction
 // else return (0,0).
 df::Vector Mummy::seeHero() {
-
-  // See if can cast line to Hero without hitting a Wall.
-  df::Vector hero_pos = m_p_hero -> getPosition();
-  df::Vector mummy_pos = getPosition();
-  df::Line sight_line(mummy_pos, hero_pos);
-  df::ObjectList ol = WM.objectsOnLine(sight_line);
-  df::ObjectListIterator i(&ol);
-  bool no_wall = true;
-  for (i.first(); !i.isDone(); i.next()) {
-    if (i.currentObject() -> getType() == "Wall")
-      no_wall = false;
-  }
-
-  // If no wall on line and in sense range, return normalized vector.
-  if (no_wall && senseHero()) {
-    df::Vector dir = getPosition() - m_p_hero->getPosition();
-    dir.normalize();
-    return dir;
-  } else
-    return df::Vector(0,0);  // Can't see.
+  return df::Vector(0,0);  // Can't see.
 }
 
 void Mummy::setMoveCountdown(int new_move_countdown) {
