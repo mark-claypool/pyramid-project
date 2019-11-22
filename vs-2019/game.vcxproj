@@ -113,7 +113,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-audio-d.lib;sfml-network-d.lib;Winmm.lib;ws2_32.lib;dragonfly.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-audio-d.lib;sfml-network-d.lib;Winmm.lib;ws2_32.lib;libdragonfly-x64-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
