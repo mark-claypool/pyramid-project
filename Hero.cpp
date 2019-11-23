@@ -28,11 +28,13 @@ Hero::Hero() {
   setAltitude(4);
   m_ankh_countdown = 0;
   
-  // Player controls hero, so register with keyboard.
+#ifdef DF_REGISTER_INTEREST
+  // Need to control Hero with keyboard.
   registerInterest(df::KEYBOARD_EVENT);
 
   // Need to update move countdown each step.
   registerInterest(df::STEP_EVENT);
+#endif 
 }
 
 // Start or stop animation.

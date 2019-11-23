@@ -16,7 +16,9 @@ AnkhTimer::AnkhTimer() {
   setBorder(false);
 
   // Need to update time each second, so count "step" events.
+#ifdef DF_REGISTER_INTEREST
   registerInterest(df::STEP_EVENT);
+#endif
   step_count = 0;
 }
 

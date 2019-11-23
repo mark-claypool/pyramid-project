@@ -28,7 +28,9 @@ Mummy::Mummy(Hero *p_hero) {
   m_p_hero = p_hero;
 
   // Get step events.
+#ifdef DF_REGISTER_INTEREST
   registerInterest(df::STEP_EVENT);
+#endif
 }
 
 // Start or stop animation.

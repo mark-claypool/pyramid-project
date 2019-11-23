@@ -1,7 +1,7 @@
 //
 // PYRAMID - solve the maze to escape the mummy guardians!
 //
-// v1.0
+// v2.1
 // 
 
 // System includes.
@@ -122,6 +122,16 @@ void placeObject(df::Object *p_o) {
   int Y = (int) WM.getBoundary().getVertical();
 
   // Repeat until random (x,y) doesn't have collision for Object.
+#ifdef USE_STL
+  std::vector<Object *> collision_list;
+  df::Vector pos;
+  do {
+    float x = (float) (rand() % (X-8) + 4);
+    float y = (float) (rand() % (Y-4) + 2 + 1);
+    pos.setXY(x, y);
+    collision_list = WM.getCollisions(this, temp_pos);
+  } while (!collision_list.empty);
+#else
   df::ObjectList collision_list;
   df::Vector pos;
   do {
@@ -130,7 +140,8 @@ void placeObject(df::Object *p_o) {
     pos.setXY(x, y);
     collision_list = WM.getCollisions(p_o, pos);
   } while (!collision_list.isEmpty());
-
+#endif
+  
   // Set position.
   p_o->setPosition(pos);
 }
