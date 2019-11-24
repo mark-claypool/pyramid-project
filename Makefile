@@ -31,6 +31,16 @@ LINKLIB= -ldragonfly-linux64 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-
 
 ######
 
+## Engine options
+
+# Uncomment below if using std::vector<Object *> instead of ObjectList.
+#CFLAGS:= $(CFLAGS) -DUSE_STL
+
+# Uncomment below if registerInterest() is defined in engine.
+CFLAGS:= $(CFLAGS) -DDF_REGISTER_INTEREST
+
+######
+
 CC= g++ 
 GAMESRC= Ankh.cpp \
 	AnkhTimer.cpp \
@@ -44,7 +54,7 @@ GAMESRC= Ankh.cpp \
 GAME= game.cpp
 EXECUTABLE= game
 OBJECTS= $(GAMESRC:.cpp=.o)
-DEBUG= -g
+DEBUG=
 CFLAGS:= $(CFLAGS) $(DEBUG)
 
 all: $(SRC) $(EXECUTABLE) Makefile

@@ -77,8 +77,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\..\sfml-2.5\include;..\..\dragonfly-src;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\dragonfly-src\vs-2019\x64\Debug;..\..\sfml-2.5\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\sfml-2.5\include;..\..\dragonfly\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\dragonfly\lib;..\..\sfml-2.5\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -109,7 +109,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DF_REGISTER_INTEREST;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
