@@ -31,6 +31,9 @@ void placeObject(df::Object *p_o);
 
 int main(void){ 
 
+  // Seed random number generator in case engine does not.
+  srand((unsigned int)time(NULL));
+
   // Start up Dragonfly.
   if (GM.startUp())  {
     LM.writeLog("Error starting game manager!");
